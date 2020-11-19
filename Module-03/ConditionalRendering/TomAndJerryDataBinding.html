@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Conditional Rendering" icon-name="custom:custom19">
+        <template if:true={showTemplateOne}>
+            <img src={firstImage} alt="Tom Image" />
+            <lightning-button variant="brand" label="Show Tom" title="Primary action" onclick={switchImages} class="slds-m-left_x-small"></lightning-button>
+        </template>
+        <template if:false={showTemplateOne}>
+            <img src={secondImage} alt="Jerry Image" />
+            <lightning-button variant="brand" label="Show Jerry" title="Primary action" onclick={switchImages} class="slds-m-left_x-small"></lightning-button>
+        </template>
+    </lightning-card>
+</template>
