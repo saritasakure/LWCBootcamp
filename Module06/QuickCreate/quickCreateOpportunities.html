@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Opportunity Manager Via Forms">
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-card title="Create A New Opportunity">
+                    <lightning-record-edit-form object-api-name="Opportunity" onsuccess={successHandler}>
+                        <p>
+                            <lightning-input-field field-name='Name'></lightning-input-field>
+                        </p>
+                        <p>
+                            <lightning-input-field field-name='StageName'></lightning-input-field>
+                        </p>
+                        <p>
+                            <lightning-input-field field-name='CloseDate'></lightning-input-field>
+                        </p>
+                        <p>
+                            <lightning-input-field field-name='AccountId'></lightning-input-field>
+                        </p>
+
+                        <p>
+                            <lightning-button type="submit" variant="brand" name="save" label="Create Opportunity">
+                            </lightning-button>
+                        </p>
+                    </lightning-record-edit-form>
+                </lightning-card>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-card title="View An Opportunity Record">
+                    <lightning-record-view-form record-id={recordId} object-api-name="Opportunity">
+                        <div class="slds-box">
+                            <p>
+                                <lightning-output-field field-name="Name"></lightning-output-field>
+                            </p>
+                            <p>
+                                <lightning-output-field field-name="StageName"></lightning-output-field>
+                            </p>
+                            <p>
+                                <lightning-output-field field-name="CloseDate"></lightning-output-field>
+                            </p>
+                            <p>
+                                <lightning-output-field field-name="AccountId"></lightning-output-field>
+                            </p>
+                        </div>
+                    </lightning-record-view-form>
+                </lightning-card>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
