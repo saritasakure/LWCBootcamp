@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Contact Manager Via Forms">
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-card title="Create A New Contact">
+                    <lightning-record-edit-form object-api-name="Contact" onsuccess={successHandler}>
+                        <p>
+                            <lightning-input-field field-name='FirstName'></lightning-input-field>
+                        </p>
+                        <p>
+                            <lightning-input-field field-name='LastName'></lightning-input-field>
+                        </p>
+                        <p>
+                            <lightning-input-field field-name='AccountId'></lightning-input-field>
+                        </p>
+
+                        <p>
+                            <lightning-button type="submit" variant="brand" name="save" label="Create Contact">
+                            </lightning-button>
+                        </p>
+                    </lightning-record-edit-form>
+                </lightning-card>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-card title="View An Contact Record">
+                    <lightning-record-view-form record-id={recordId} object-api-name="Contact">
+                        <div class="slds-box">
+                            <p>
+                                <lightning-output-field field-name="FirstName"></lightning-output-field>
+                            </p>
+                            <p>
+                                <lightning-output-field field-name="LastName"></lightning-output-field>
+                            </p>
+                            <p>
+                                <lightning-output-field field-name="AccountId"></lightning-output-field>
+                            </p>
+                        </div>
+                    </lightning-record-view-form>
+                </lightning-card>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
